@@ -1,4 +1,4 @@
-/*
+/*o
  * Copyright (c) 2020 The ZMK Contributors
  *
  * SPDX-License-Identifier: MIT
@@ -20,7 +20,7 @@
  * Approximate the QMK home-row mods configured with:
  *
  *   CHORDAL_HOLD
- *   TAPPING_TERM 175
+ *   TAPPING_TERM 175 (raised to 280 ms in ZMK to protect same-hand rolls)
  *   QUICK_TAP_TERM 0
  *
  * Opposite-hand chords trigger the modifier hold. Same-hand rolls are biased
@@ -32,7 +32,7 @@
                         compatible = "zmk,behavior-hold-tap";
                         #binding-cells = <2>;
                         flavor = "balanced";
-                        tapping-term-ms = <175>;
+                        tapping-term-ms = <250>;
                         quick-tap-ms = <0>;
                         require-prior-idle-ms = <125>;
                         bindings = <&kp>, <&kp>;
@@ -49,7 +49,7 @@
                         compatible = "zmk,behavior-hold-tap";
                         #binding-cells = <2>;
                         flavor = "balanced";
-                        tapping-term-ms = <175>;
+                        tapping-term-ms = <250>;
                         quick-tap-ms = <0>;
                         require-prior-idle-ms = <125>;
                         bindings = <&kp>, <&kp>;
