@@ -4,11 +4,20 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: cjpeterein
+      url-base: https://github.com/cjpeterein
     # Additional modules containing boards/shields/custom code can be listed here as well
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
   projects:
     - name: zmk
       remote: zmkfirmware
       import: app/west.yml
+    # Status screen for the halves' nice!views when the dongle is the central:
+    # the dongle sends layer, modifiers, output and battery state to both halves.
+    # Requires ZMK v0.3. Pinned to main as of 2026-10-14; the dongle and both
+    # halves must always be flashed from the same revision.
+    - name: zmk-split-display-view
+      remote: cjpeterein
+      revision: ad83d97f48534373514b8e084da075d53b9f1578
   self:
     path: config
